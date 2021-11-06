@@ -51,11 +51,13 @@ function humanPlay() {
   let optionArray = ["Rock", "Paper", "Scissors"];
   let playerSelection = prompt("Input command:");
   playerSelection = playerSelection.toLowerCase();
-  playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+  playerSelection =
+    playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
   while (optionArray.includes(playerSelection) == false) {
     playerSelection = prompt("Invalid Input!\n Try again:");
     playerSelection = playerSelection.toLowerCase();
-    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+    playerSelection =
+      playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
   }
   return playerSelection;
 }
