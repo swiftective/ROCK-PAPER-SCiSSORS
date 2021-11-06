@@ -1,2 +1,23 @@
+body,
+html {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  background-color: #121212;
+  color: white;
+}
 
+.body_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
+code {
+  font-size: 2em;
+  border-radius: 20px;
+  border: Solid white;
+  padding: 1em;
+  color: white;
+}
