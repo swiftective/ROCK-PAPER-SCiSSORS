@@ -2,7 +2,7 @@ console.log(
   "%cType" +
     "%c game()" +
     "%c on the console and press Enter to start the game !!!\n" +
-    "\nRules:\n1. You choose:\n  - Rock\n  - Paper\n  - Scissors\n2. Five rounds\n3. You will play against the computer\n4. Player with most points wins\n",
+    "\nRules:\n1. You choose:\n  - Rock\n  - Paper\n  - Scissors\n2. Five rounds\n3. You will play against the computer\n4. Player with most points in the end of the game wins!!!\n",
   "color: white;",
   "color: #48ab61; font-style: italic;",
   "color: white; font-style: normal;"
@@ -49,11 +49,11 @@ function computerPlay() {
 // sanitized user input for command
 function humanPlay() {
   let optionArray = ["Rock", "Paper", "Scissors"];
-  var playerSelection = prompt("Input command:");
+  let playerSelection = prompt("Input command:");
   playerSelection = playerSelection.toLowerCase();
   playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
   while (optionArray.includes(playerSelection) == false) {
-    playerSelection = prompt("Error Try again:");
+    playerSelection = prompt("Invalid Input!\n Try again:");
     playerSelection = playerSelection.toLowerCase();
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
   }
