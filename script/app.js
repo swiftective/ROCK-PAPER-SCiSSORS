@@ -9,7 +9,6 @@ console.log(
 );
 
 function game() {
-  // let gameRound = 0;
   let computerScore = 0;
   let humanScore = 0;
   for (let i = 0, len = 5; i < len; i++) {
@@ -39,14 +38,14 @@ function game() {
   console.log(results);
 }
 
-// random computer command
+// random computer choice
 function computerPlay() {
   let optionArray = ["Rock", "Paper", "Scissors"];
   let randomNum = Math.floor(Math.random() * optionArray.length);
   return optionArray[randomNum];
 }
 
-// sanitized user input for command
+// sanitized user input
 function humanPlay() {
   let optionArray = ["Rock", "Paper", "Scissors"];
   let playerSelection = prompt("Input command:");
