@@ -1,3 +1,4 @@
+// Rules
 console.log(
   "%cType" +
     "%c game()" +
