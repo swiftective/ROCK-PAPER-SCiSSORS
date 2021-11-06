@@ -2,8 +2,15 @@
 console.log(
   "%cType" +
     "%c game()" +
-    "%c on the console and press Enter to start the game !!!\n" +
-    "\nRules:\n1. You choose:\n  - Rock\n  - Paper\n  - Scissors\n2. Five rounds\n3. You will play against the computer\n4. Player with most points in the end of the game wins!!!\n",
+    "%c on the console and press Enter to start the game !!!\n\n" +
+    "Rules:\n\
+      1. You choose:\n\
+          - Rock\n\
+          - Paper\n\
+          - Scissors\n\
+      2. Five rounds\n\
+      3. You will play against the computer\n\
+      4. Player with most points in the end of the game wins!!!\n",
   "color: white;",
   "color: #48ab61; font-style: italic;",
   "color: white; font-style: normal;"
