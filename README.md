@@ -1,4 +1,4 @@
-# ROCK-PAPER-SCiSSORS 🎇
+# ROCK-PAPER-SCiSSORS (UI Version)
 
 ## The Odin Project Assignment
 
