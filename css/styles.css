@@ -7,17 +7,58 @@ html {
   color: white;
 }
 
-.body_container {
+.container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  flex-direction: column;
 }
 
-code {
+h1 {
+  align-self: center;
+}
+
+.score-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: space-around;
+  margin: 2em;
   font-size: 2em;
-  border-radius: 20px;
-  border: Solid white;
+}
+
+#computer-score:after {
+  display: block;
+  content: "Machine";
+}
+
+#human-score:after {
+  display: block;
+  content: "Human";
+}
+
+.opt-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2em;
+  gap: 2em;
+}
+
+.opt {
+  border: 1px solid white;
   padding: 1em;
-  color: white;
+}
+
+.opt:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 1rem white;
+}
+
+#comments {
+  align-self: center;
+  /* color: red; */
+}
+
+#btn {
+  align-self: center;
+  margin: 1em;
 }
