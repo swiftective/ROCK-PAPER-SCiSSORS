@@ -1,72 +1,12 @@
-// Rules
-console.log(
-  "%cType" +
-    "%c game()" +
-    "%c on the console and press Enter to start the game !!!\n\n" +
-    "Rules:\n\
-      1. You choose:\n\
-          - Rock\n\
-          - Paper\n\
-          - Scissors\n\
-      2. Five rounds\n\
-      3. You will play against the computer\n\
-      4. Player with most points in the end of the game wins!!!\n",
-  "color: white;",
-  "color: #48ab61; font-style: italic;",
-  "color: white; font-style: normal;"
-);
-
-function game() {
-  let computerScore = 0;
-  let humanScore = 0;
-  for (let i = 0, len = 5; i < len; i++) {
-    let roundScore = playRound(computerPlay(), humanPlay());
-    if (roundScore == "computer") {
-      computerScore = ++computerScore;
-      console.log(
-        `Your Score: ${humanScore}\nComputer Score: ${computerScore}\n `
-      );
-    } else if (roundScore == "human") {
-      humanScore = ++humanScore;
-      console.log(
-        `Your Score: ${humanScore}\nComputer Score: ${computerScore}\n `
-      );
-    } else {
-      console.log(
-        `Your Score: ${humanScore}\nComputer Score: ${computerScore}\n `
-      );
-    }
-  }
-  const results =
-    computerScore > humanScore
-      ? "You Lost!!! Try again!!!"
-      : humanScore > computerScore
-      ? "Congrats, You won!!!"
-      : "Well it's a TIE!!!";
-  console.log(results);
-}
+// Defining the both scores
+let humanScore = 0
+let computerScore = 0
 
 // random computer choice
 function computerPlay() {
   let optionArray = ["Rock", "Paper", "Scissors"];
   let randomNum = Math.floor(Math.random() * optionArray.length);
   return optionArray[randomNum];
-}
-
-// sanitized user input
-function humanPlay() {
-  let optionArray = ["Rock", "Paper", "Scissors"];
-  let playerSelection = prompt("Input command:");
-  playerSelection = playerSelection.toLowerCase();
-  playerSelection =
-    playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-  while (optionArray.includes(playerSelection) == false) {
-    playerSelection = prompt("Invalid Input!\n Try again:");
-    playerSelection = playerSelection.toLowerCase();
-    playerSelection =
-      playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-  }
-  return playerSelection;
 }
 
 // stick algorithmn
@@ -76,13 +16,35 @@ function humanPlay() {
 function playRound(player1, player2) {
   p1 = player1 === "Rock" ? 0 : player1 === "Paper" ? 1 : 2;
   p2 = player2 === "Rock" ? 0 : player2 === "Paper" ? 1 : 2;
+  commentDiv = document.getElementById("comments");
   if ((p1 + 1) % 3 == p2) {
-    console.log(`You win this round! ${player2} beats ${player1}`);
-    return "human";
+    commentDiv.textContent = `You win this round! ${player2} beats ${player1}`;
+    humanScore += 1;
   } else if (p1 == p2) {
-    console.log(`It's a TIE this round !!! Both used ${player1}`);
+    commentDiv.textContent = `It's a TIE this round !!! Both used ${player1}`;
   } else {
-    console.log(`You lose this round! ${player1} beats ${player2}`);
-    return "computer";
+    commentDiv.textContent = `You lose this round! ${player1} beats ${player2}`;
+    computerScore += 1;
   }
 }
+
+function getOptData(e) {
+  commentDiv = document.getElementById("comments");
+  if (humanScore === 5 ) {
+    commentDiv.style.color = 'green';
+    commentDiv.textContent = "You Won, Congrats!!!"
+    return
+  } else if (computerScore === 5) {
+    commentDiv.style.color = 'red';
+    commentDiv.textContent = "You lost try again!!!"
+    return
+  }
+  userInput = e.target.getAttribute('data-opt')
+  playRound(computerPlay(), userInput)
+  document.getElementById('human-score').textContent = humanScore
+  document.getElementById('computer-score').textContent = computerScore
+}
+
+divDataOpt = document.querySelectorAll("div[data-opt]")
+divDataOpt.forEach((data) => data.addEventListener('click', getOptData))
+

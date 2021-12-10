@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>ROCK-PAPER-SCiSSORS</title>
-    <script src="script/app.js"></script>
+    <script src="script/app.js" defer></script>
     <link
       rel="stylesheet"
       href="./css/styles.css"
@@ -16,8 +16,19 @@
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <div class="body_container">
-      <code>Ctrl + Shift + j</code>
+    <div class="container">
+      <h1>ROCK-PAPER-SCiSSORS</h1>
+      <div class="score-container">
+        <div id="human-score"></div>
+        <div id="computer-score"></div>
+      </div>
+      <div class="opt-container">
+        <div data-opt="Rock" class="opt">Rock</div>
+        <div data-opt="Paper" class="opt">Paper</div>
+        <div data-opt="Scissors" class="opt">Scissors</div>
+      </div>
+      <div id="comments">Welcome to ROCK-PAPER-SCiSSORS</div>
+      <button id="btn" onClick="window.location.reload()">Restart</button>
     </div>
   </body>
 </html>
